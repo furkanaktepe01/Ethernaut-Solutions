@@ -9,6 +9,7 @@ Preventative Techniques:
 Do not store sensitive data on-chain
 Private access modifier is used for restricting direct access
 But the data is publicly avaliable on the storage of the contract
+
 */
 
 const attack = async (contract) => {
