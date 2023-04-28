@@ -10,7 +10,7 @@ Use constructor keyword
 
 */
 
-const attack = async (contract) => {
+const attack = async () => {
 
     await contract.Fal1out();
 }

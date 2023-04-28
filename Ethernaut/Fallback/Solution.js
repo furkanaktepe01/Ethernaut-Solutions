@@ -10,7 +10,7 @@ Reassign under reassignment-worthy conditions
 
 */
 
-const attack = async (contract) => {
+const attack = async () => {
 
     await contract.contribute({ value: toWei("0.0005") });
 

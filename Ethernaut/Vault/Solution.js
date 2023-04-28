@@ -12,7 +12,7 @@ But the data is publicly avaliable on the storage of the contract
 
 */
 
-const attack = async (contract) => {
+const attack = async () => {
 
     const password = await web3.eth.getStorageAt(contract.address, 1);
 
